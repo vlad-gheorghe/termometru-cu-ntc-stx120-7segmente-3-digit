@@ -1,0 +1,1 @@
+# termometru-cu-ntc-stx120-7segmente-3-digit
