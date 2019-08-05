@@ -23,7 +23,7 @@
 // which analog pin to connect
 #define THERMISTORPIN A0         
 // resistance at 25 degrees C
-#define THERMISTORNOMINAL 1800      
+#define THERMISTORNOMINAL 1800   /1,8KOhm   
 // temp. for nominal resistance (almost always 25 C)
 #define TEMPERATURENOMINAL 25   
 // how many samples to take and average, more takes longer
@@ -32,7 +32,7 @@
 // The beta coefficient of the thermistor (usually 3000-4000)
 #define BCOEFFICIENT 3000
 // the value of the 'other' resistor
-#define SERIESRESISTOR 9980    
+#define SERIESRESISTOR 9980    //10KOhm
 
 int samples[NUMSAMPLES];
 
@@ -43,7 +43,7 @@ SevenSeg disp (2,3,4,5,12,7,8);
 //Number of 7 segments
 const int numOfDigits =3;
 //CC(or CA) pins of segment
-int digitPins [numOfDigits]={11,10,9};//11-right, 10-midle, 9-left
+int digitPins [numOfDigits]={11,10,9};//6-right,11-right, 10-midle, 9-left
 
 //Variables
 int digitL;
@@ -59,7 +59,7 @@ void setup() {
     //Only for common cathode 7segments
     disp.setCommonCathode();
     //Control brightness (values 0-100);
-    disp.setDutyCycle(20);
+    disp.setDutyCycle(70);
     
     disp.setTimer (2);
     disp.startTimer ();
